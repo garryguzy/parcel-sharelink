@@ -91,10 +91,10 @@ const setRule = (options: RuleOptions): void => {
 
 // 选择不限
 const setRuleType0 = (rule_type: RuleType) => {
-  rule_type === 0  &&  (
-    ruleNumEl.style.display = "none" ;
+  if (rule_type === 0) {
+    ruleNumEl.style.display = "none";
     rule_num = 1;
-  )
+  }
 };
 
 const setRuleNoneType0 = (rule_type: RuleType) => {
