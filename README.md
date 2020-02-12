@@ -1,4 +1,4 @@
-# empty-project
+# parcel project
 
 Empty project.
 
