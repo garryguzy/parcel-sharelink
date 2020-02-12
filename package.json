@@ -1,0 +1,31 @@
+{
+  "name": "empty-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm dist/bundle.js",
+    "start": "parcel src/index.html",
+    "build-prod": "parcel build src/index.html",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "7.8.4",
+    "@babel/preset-env": "7.8.4",
+    "@babel/preset-typescript": "7.8.3",
+    "@testing-library/jest-dom": "5.1.1",
+    "@types/jest": "25.1.2",
+    "@types/jquery": "3.3.32",
+    "@types/testing-library__jest-dom": "5.0.1",
+    "babel-jest": "25.1.0",
+    "jest": "25.1.0",
+    "parcel-bundler": "1.12.4",
+    "prettier": "1.19.1",
+    "ts-jest": "25.2.0",
+    "typescript": "3.7.5"
+  }
+}
