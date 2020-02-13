@@ -114,5 +114,6 @@ export {
   bindSelect,
   selectRuleNum,
   selectRuleType,
-  getRuleResult
+  getRuleResult,
+  unBindSelect
 };

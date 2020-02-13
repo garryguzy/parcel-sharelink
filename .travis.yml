@@ -1,3 +1,5 @@
 language: node_js
 node_js:
   - "10.15.1"
+CODECOV_TOKEN:
+  - "f5999edf-90eb-400b-b7dc-d0c1183b43e2"
