@@ -1,4 +1,4 @@
-import { initializeRender, setRule, bindSelect } from "./tableRule";
+import { initializeRender, setRule, bindSelect } from "./tableRule/tableRule";
 
 initializeRender();
 
