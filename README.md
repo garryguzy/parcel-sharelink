@@ -1,6 +1,4 @@
-# parcel project
-
-Empty project.
+# Parcel Demo project
 
 ## Building and running on localhost
 
@@ -22,6 +20,10 @@ To create a production build:
 npm run build-prod
 ```
 
+To config sync
+
+modify sync.json
+
 ## Running
 
 ```sh
@@ -31,4 +33,3 @@ node dist/bundle.js
 ## Credits
 
 Made with [createapp.dev](https://createapp.dev/)
-
