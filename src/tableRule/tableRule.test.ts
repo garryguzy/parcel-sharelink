@@ -4,7 +4,8 @@ import {
   selectRuleType,
   selectRuleNum,
   getRuleResult,
-  bindSelect
+  bindSelect,
+  getRuleInfoResult
 } from "./tableRule";
 import "@testing-library/jest-dom";
 
@@ -81,6 +82,36 @@ describe("在使用上的交互", () => {
     const { rule_type, rule_num } = getRuleResult();
     expect(rule_type).toBe(0);
     expect(rule_num).toBe(1);
+  });
+});
+
+describe("在工作台上能够正确显示当前的规则信息", () => {
+  it("根据设定的规则，获取到result能够得到正确的结果", () => {
+    const ruleTypeEl = window.document.getElementById("rule_type");
+    $(ruleTypeEl!)
+      .val(2)
+      .change();
+    const ruleNumSelector = window.document.getElementById("rule_num");
+    expect(ruleNumSelector).toBeVisible();
+    $(ruleNumSelector!)
+      .val(2)
+      .change();
+    const { rule_type, rule_num } = getRuleResult();
+    const result = getRuleInfoResult(rule_type, rule_num);
+    expect(result).toBe("每天二次");
+  });
+  it("根据设定的规则,如果是不限，获取到result能够得到正确的结果", () => {
+    const ruleTypeEl = window.document.getElementById("rule_type");
+    $(ruleTypeEl!)
+      .val(0)
+      .change();
+    const ruleNumSelector = window.document.getElementById("rule_num");
+    expect(ruleNumSelector).not.toBeVisible();
+    $(ruleNumSelector!)
+      .val(2)
+      .change();
+    const result = getRuleInfoResult();
+    expect(result).toBe("不限");
   });
 });
 

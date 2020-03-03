@@ -11,6 +11,20 @@ enum RuleType {
   "每月"
 }
 
+enum RuleNumChinese {
+  "零" = 0,
+  "一" = 1,
+  "二",
+  "三",
+  "四",
+  "五",
+  "六",
+  "七",
+  "八",
+  "九",
+  "十"
+}
+
 let rule_type: number = 0;
 let rule_num: number = 1;
 
@@ -78,7 +92,7 @@ const renderRuleType = () => {
 const renderRuleNum = () => {
   const nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   const ruleNumOptionsArr = nums.map(n => {
-    return `<option value="${n}">${n}次</option>`;
+    return `<option value="${n}">${RuleNumChinese[n]}次</option>`;
   });
   ruleNumEl.innerHTML = ruleNumOptionsArr.join("\n");
 };
@@ -108,6 +122,11 @@ const getRuleResult = (): RuleOptions => {
   };
 };
 
+const getRuleInfoResult = (rule_type = 0, rule_num = 1) => {
+  const RuleNumInfo = rule_type ? `${RuleNumChinese[rule_num]}次` : "";
+  return `${RuleType[rule_type]}${RuleNumInfo}`;
+};
+
 export {
   setRule,
   initializeRender,
@@ -115,5 +134,6 @@ export {
   selectRuleNum,
   selectRuleType,
   getRuleResult,
-  unBindSelect
+  unBindSelect,
+  getRuleInfoResult
 };

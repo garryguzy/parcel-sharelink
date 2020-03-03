@@ -1,0 +1,4 @@
+{
+  "sourcePath": "./src/tableRule",
+  "destPath": "./staticfs/desktop/js/tables/table_list/"
+}
